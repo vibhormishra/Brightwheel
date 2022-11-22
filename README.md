@@ -3,14 +3,20 @@
 
 ## How to run this locally
 
+*Note: Recommended Python3.6 or higher. And the following steps were performed and tested on Windowns OS*
+
 1) The code is using Flask library in Python to host a server locally with the endpoints. The flask can be installed using this command: ```pip install flask```
 2) Now to start up the server, run this command: ```python <local_path_to_this_file>\python_flask_api.py```
 3) These APIs were tested using Postman and can be accessed using following urls locally:
-  a) http://127.0.0.1:5000/device/readings - POST request 
-    i) it requires ```"Content-Type":"application/json"``` in request header
-  b) http://localhost:5000/device/get/count?id=36d5658a-6908-479e-887e-a949ec199272
-  c) http://127.0.0.1:5000/device/get/timestamp?id=36d5658a-6908-479e-887e-a949ec199272
-  
+   - http://127.0.0.1:5000/device/readings - POST request 
+     - it requires ```"Content-Type":"application/json"``` in request header
+   - http://127.0.0.1:5000/device/get/count?id=36d5658a-6908-479e-887e-a949ec199272
+   - http://127.0.0.1:5000/device/get/timestamp?id=36d5658a-6908-479e-887e-a949ec199272
+
+![POST request Postman](https://user-images.githubusercontent.com/24560549/203226117-66f307ff-d909-471b-b2f9-b79fba7fe618.JPG)
+
+![GET Request Postman](https://user-images.githubusercontent.com/24560549/203226145-b345fb7b-7cbb-43e7-b7e4-bf1b0380437a.JPG)
+
 ## Code Structure
 - The file that has the ```main``` function is ```python_flask_api.py```. This file defines all three endpoints: ```device/readings```, ```device/get/count```, ```device/get/timestamp```.
 - The ```data.py``` file has ```DeviceData``` class that defines methods for storing readings and fetching latest timestamp and count for each device.
